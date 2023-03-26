@@ -1,4 +1,4 @@
-import { Container } from "./common/components";
+import { Container } from "./components/common";
 
 export const Main = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
+import { Heading } from "@/app/components/common";
 import { Article, Comment } from "@/types/Types";
 import { Suspense } from "react";
+import { ArticleContent } from "./ArticleContent";
+import { Comments } from "./Comments";
+import { LoadingComments } from "./LoadingComments";
 
 const getArticle = async (slug: string) => {
   const res = await fetch(`http://localhost:3000/api/articles/${slug}`, {
@@ -34,24 +38,16 @@ export const ArticleDetail = async ({ params }: { params: { slug: string } }) =>
   const article = await articlePromise;
   return (
     <div>
-      <h1>{article.title}</h1>
-      <p>{article.content}</p>
-      <h2>Comments</h2>
-      <Suspense fallback={<div>Loading comments...</div>}>
+      <ArticleContent article={article} />
+      <Heading as="h2" mt={8} mb={4}>
+        Comments
+      </Heading>
+      <Suspense fallback={<LoadingComments />}>
         {/* @ts-expect-error 現状は jsx が Promise を返すと TypeScript が型エラーを報告するが、将来的には解決される */}
         <Comments commentsPromise={commentsPromise} />
       </Suspense>
     </div>
   );
 };
-const Comments = async ({ commentsPromise }: { commentsPromise: Promise<Comment[]> }) => {
-  const comments = await commentsPromise;
-  return (
-    <ul>
-      {comments.map((comment) => (
-        <li key={comment.id}>{comment.body}</li>
-      ))}
-    </ul>
-  );
-};
+
 export default ArticleDetail;

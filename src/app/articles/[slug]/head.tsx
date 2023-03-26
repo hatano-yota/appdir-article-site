@@ -1,4 +1,4 @@
-import DefaultTags from "@/app/DefaultTags";
+import DefaultTags from "@/app/components/DefaultTags";
 import { Article } from "@/types/Types";
 
 const getArticle = async (slug: string) => {

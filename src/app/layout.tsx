@@ -1,8 +1,8 @@
 import "../styles/globals.css";
-import { Provider } from "./Provider";
-import { Header } from "./Header";
-import { Main } from "./Main";
-import { Footer } from "./Footer";
+import { Provider } from "./components/Provider";
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
+import { Footer } from "./components/Footer";
 
 export const metadata = {
   title: "AppDir BlogApp",

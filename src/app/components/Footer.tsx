@@ -1,4 +1,4 @@
-import { Container, Box, Text } from "./components/common";
+import { Container, Box, Text } from "./common";
 
 export const Footer = () => {
   return (

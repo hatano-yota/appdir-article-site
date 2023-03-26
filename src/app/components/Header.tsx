@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Button } from "./components/common";
+import { Box, Flex, Heading, Button } from "./common";
 import NextLink from "next/link";
 
 export const Header = () => {

@@ -17,7 +17,7 @@ export const ArticleCard = ({ article }: { article: Article }) => {
       }}
       minW="100%"
     >
-      <NextLink href={`/article/${article.slug}`}>
+      <NextLink href={`/articles/${article.slug}`}>
         <CardHeader>
           <Heading>{article.title}</Heading>
         </CardHeader>

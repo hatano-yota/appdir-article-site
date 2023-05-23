@@ -1,10 +1,10 @@
-import { notFound } from "next/navigation";
 import { Heading } from "@/app/components/common";
 import { Article, Comment } from "@/types/Types";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { ArticleContent } from "./ArticleContent";
-import { Comments } from "./Comments";
-import { LoadingComments } from "./LoadingComments";
+import ArticleContent from "./ArticleContent";
+import Comments from "./Comments";
+import LoadingComments from "./LoadingComments";
 
 const getArticle = async (slug: string) => {
   const res = await fetch(`http://localhost:3000/api/articles/${slug}`, {
@@ -32,7 +32,7 @@ const getComments = async (slug: string) => {
   return data as Comment[];
 };
 
-export const ArticleDetail = async ({ params }: { params: { slug: string } }) => {
+const ArticleDetail = async ({ params }: { params: { slug: string } }) => {
   const articlePromise = getArticle(params.slug);
   const commentsPromise = getComments(params.slug);
   const article = await articlePromise;

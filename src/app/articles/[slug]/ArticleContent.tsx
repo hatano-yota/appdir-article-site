@@ -1,7 +1,7 @@
-import { Card, CardHeader, CardBody, Text, Heading } from "@/app/components/common";
+import { Card, CardBody, CardHeader, Heading, Text } from "@/app/components/common";
 import { Article } from "@/types/Types";
 
-export const ArticleContent = ({ article }: { article: Article }) => {
+const ArticleContent = ({ article }: { article: Article }) => {
   return (
     <Card as="article">
       <CardHeader>
@@ -15,3 +15,5 @@ export const ArticleContent = ({ article }: { article: Article }) => {
     </Card>
   );
 };
+
+export default ArticleContent;

@@ -1,7 +1,7 @@
-import { StackDivider, VStack, Text, Avatar, Flex } from "@/app/components/common";
+import { Avatar, Flex, StackDivider, Text, VStack } from "@/app/components/common";
 import { Comment } from "@/types/Types";
 
-export const Comments = async ({ commentsPromise }: { commentsPromise: Promise<Comment[]> }) => {
+const Comments = async ({ commentsPromise }: { commentsPromise: Promise<Comment[]> }) => {
   const comments = await commentsPromise;
 
   if (comments.length === 0) {
@@ -28,3 +28,5 @@ export const Comments = async ({ commentsPromise }: { commentsPromise: Promise<C
     </VStack>
   );
 };
+
+export default Comments;

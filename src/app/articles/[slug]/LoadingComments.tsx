@@ -1,6 +1,6 @@
-import { StackDivider, VStack, Flex, SkeletonCircle, Skeleton } from "@/app/components/common";
+import { Flex, Skeleton, SkeletonCircle, StackDivider, VStack } from "@/app/components/common";
 
-export const LoadingComments = () => {
+const LoadingComments = () => {
   return (
     <VStack
       divider={<StackDivider borderColor="gray.200" />}
@@ -24,3 +24,5 @@ const CommentSkeltonItem = () => {
     </Flex>
   );
 };
+
+export default LoadingComments;
